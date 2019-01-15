@@ -1,7 +1,7 @@
 <template>
   <div class="hello">
     <h1>Draggable Number Component</h1>
-    <draggable-number-input v-model="someNumber" label="My Number" />
+    <draggable-number-input v-model="someNumber" label="My Number" drag-direction="Y" :hide-label="false"/>
   </div>
 </template>
 
