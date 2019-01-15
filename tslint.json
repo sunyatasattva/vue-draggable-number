@@ -9,7 +9,8 @@
     ]
   },
   "rules": {
-    "quotemark": [true, "single"],
+    "curly": [true, "as-needed"],
+    "quotemark": [true, "double"],
     "indent": [true, "spaces", 2],
     "interface-name": false,
     "ordered-imports": false,
