@@ -1,13 +1,12 @@
 {
   "name": "vue-draggable-number",
-  "version": "0.1.0",
-  "private": true,
+  "version": "1.0.1",
   "scripts": {
     "serve": "vue-cli-service serve",
     "build": "vue-cli-service build",
     "lint": "vue-cli-service lint",
     "test:unit": "vue-cli-service test:unit",
-    "build-component": "vue-cli-service build --target lib --name vueDraggableNumber ./src/components/VueDraggableNumber.vue"
+    "build-component": "vue-cli-service build --target lib --name vueDraggableNumber ./src/components/DraggableNumberInput.vue"
   },
   "dependencies": {
     "vue": "^2.5.21",
@@ -25,5 +24,11 @@
     "ts-jest": "^23.0.0",
     "typescript": "^3.0.0",
     "vue-template-compiler": "^2.5.21"
+  },
+  "main": "dist/vueDraggableNumber.umd.js",
+  "module": "dist/vueDraggableNumber.common.js",
+  "unpkg": "dist/vueDraggableNumber.umd.min.js",
+  "browser": {
+    "./sfc": "src/components/DraggableNumberInput.vue"
   }
 }

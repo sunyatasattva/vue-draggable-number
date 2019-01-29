@@ -1,39 +1,56 @@
-# vue-draggable-number
+# Vue Draggable Number
 
-## Project setup
-```
-npm install
-```
+A simple number input component that users can edit by dragging the label around, inspired by Photoshop UX.
 
-### Compiles and hot-reloads for development
-```
-npm run serve
-```
+Written in Typescript.
 
-### Compiles and minifies for production
-```
-npm run build
-```
+**Full demo**: 
 
-### Run your tests
-```
-npm run test
-```
+## Basic usage
 
-### Lints and fixes files
-```
-npm run lint
-```
+```html
+<template>
+  <div>
+   <draggable-number-input v-model="someNumber" label="My number" />
+  </div>
+</template>
 
-### Run your end-to-end tests
-```
-npm run test:e2e
+<script>
+  export default {
+    data() {
+      return {
+        someNumber: 1,
+      };
+    },
+  };
+</script>
 ```
 
-### Run your unit tests
-```
-npm run test:unit
+This will create an unstyled HTML5 `<input type="number">` tied to `someNumber`, the value of which the user can easily increase or decrease by dragging (respectively) up and down on the label.
+
+The only two required properties are `label` and `value` (in the example case, handled through the `v-model` syntactic sugar).
+
+### Allowed props
+
+| Property | Description | Type | Default | Options |
+|---------------|----------------------------------------------------------------------------------------------------------------------|---------|-----------|--------------|
+| dragDirection | The axis in which the user has to drag to increase/decrease the number. | String | "Y" | "X" | "Y" |
+| hideLabel | Whether or not to hide the label. | Boolean | false | true | false |
+| label | The label to show next to the input. It is also used to generate the name of the input and the class of the wrapper. | String | - | - |
+| max | Maximum allowed value. | Number | Infinity | - |
+| min | Minimum allowed value. | Number | -Infinity | - |
+| step | The amount by which the value is increased on mouse movement. | Number | 1 | - |
+| value | The value of the input. | Number | - | - |
+
+The generated HTML looks like this:
+
+```html
+<div class="vue-draggable-number-container ${generatedInputName}">
+  <label for="${generatedInputName}"> {{ label }} </label>
+  <input type="number" name="${generatedInputName}" />
+</div>
 ```
 
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
+Where `${generatedInputName}` is `draggable-number-` plus the _kebab-cased_ label.
+
+These are useful to target the component for styling.
