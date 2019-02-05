@@ -1,6 +1,6 @@
 {
   "name": "vue-draggable-number",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "scripts": {
     "serve": "vue-cli-service serve",
     "build": "vue-cli-service build",
@@ -25,6 +25,7 @@
     "vue-property-decorator": "^7.0.0",
     "vue-template-compiler": "^2.5.21"
   },
+  "license": "MIT",
   "main": "dist/vueDraggableNumber.umd.js",
   "module": "dist/vueDraggableNumber.common.js",
   "unpkg": "dist/vueDraggableNumber.umd.min.js",
