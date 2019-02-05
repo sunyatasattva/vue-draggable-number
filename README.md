@@ -4,7 +4,9 @@ A simple number input component that users can edit by dragging the label around
 
 Written in Typescript.
 
-**Full demo**: 
+**Full demo**: https://sunyatasattva.github.io/vue-draggable-number/
+
+![Demo of the component](docs/demo.gif)
 
 ## Basic usage
 
